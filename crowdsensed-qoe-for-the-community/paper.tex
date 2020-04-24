@@ -1,0 +1,88 @@
+%!TEX program = pdflatex
+\documentclass[conference]{IEEEtran}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[american]{babel}
+
+
+\usepackage[acronym, nomain, nowarn]{glossaries}
+\loadglsentries{acronyms}
+\usepackage{csquotes}
+\usepackage{booktabs}
+
+\usepackage{url}
+
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{fixmath}
+\usepackage{algorithm2e}
+\usepackage{subcaption}
+
+\usepackage{eurosym}
+\usepackage{siunitx}
+\sisetup{load-configurations = abbreviations,
+         binary-units, 
+         per-mode=symbol, 
+         detect-weight=true, 
+         detect-family=true}
+\DeclareSIUnit{\EUR}{\text{\euro}}
+
+\usepackage[url=false,
+            doi=false,
+            backend=biber,
+            style=ieee,
+            isbn=false,
+            sorting=none,
+            minnames=1,
+            maxnames=2]{biblatex}
+\addbibresource{literature.bib}
+
+\usepackage{tabu}
+\makeglossaries
+
+\usepackage[inline]{enumitem}
+
+\usepackage[np]{numprint}
+\usepackage{balance}
+
+\npstyleenglish
+
+
+\begin{document}
+
+\title{Crowdsensed QoE for the Community}
+
+
+
+\author{\IEEEauthorblockN{Florian Metzger}
+\IEEEauthorblockA{
+Chair of Communication Networks\\
+University of Würzburg, Germany\\
+%Essen, Germany\\
+florian.metzger@uni-wuerzburg.de}
+\and
+\IEEEauthorblockN{Tobias Hoßfeld}
+\IEEEauthorblockA{
+Chair of Communication Networks\\
+University of Würzburg, Germany\\
+%Essen, Germany\\
+tobias.hossfeld@uni-wuerzburg.de}}
+
+\maketitle
+
+\input{abstract.tex}
+\input{preface.tex}
+\input{introduction.tex}
+\input{relatedwork.tex}
+\input{prototype.tex}
+\input{mappings.tex}
+\input{conclusion.tex}
+
+\section*{Acknowledgments}
+We would like to thank Michael Jokic for his contributions. The work on bandwidth estimation is based on his 2016 master's thesis ``Analyse von Bandbreitenmessmethoden in mobilen Netzen''.
+
+\balance
+\printbibliography
+
+\end{document}

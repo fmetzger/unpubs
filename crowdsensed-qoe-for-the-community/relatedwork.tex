@@ -1,0 +1,57 @@
+%!TEX root = paper.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Related Work and Background}
+\label{sec:relatedwork}
+
+In order for such an approach to succeed quite a few different lines of work need to be reconciled here. Namely:
+\begin{itemize}
+	\item Crowdsourcing and participatory sensing methods,
+	\item the intricacies of community networks and testbeds,
+	\item subjective video streaming user studies,
+	\item Resource-friendly network \gls{QoS} measurements
+	\item the relationship of network \gls{QoS} to video \gls{QoE} and mappings thereof.
+\end{itemize}
+
+Each of these individual sectors and work essential for this QoE-crowdsensing approach are briefly covered in this section.
+
+
+%%%%%%%%%%%%%%
+\subsection{Crowdsourcing, Crowdsensing and Experiences with Existing Community Campaigns}
+
+Targeting a participatory crowdsourcing approach for large-scale \gls{QoE}-mappings is a challenging endeavor, therefore building on past experiences and best practices is crucial. For example, crowdsourced network measurements raise the issue of trust in the collected data, as it could have been, willingly or unwillingly, falsified \cite{Tanas2014,Hirth201585}. This needs to be dealt with the proper verification and statistical methods.
+
+The concept of participatory sensing (e.g. \cite{Dutta:2009:CSP:1644038.1644095,Shilton:2009:FBL:1592761.1592778}) has now been around for a few years and quite a number of projects exist now that aim to gather and make available sensed data to the community, e.g. air quality data in \cite{partisensing2006} or vehicular traffic~\cite{Herrera2010568}. %, or public transportation incidents in \cite{Tanas2013}.
+Campaigns that aim to put a data-collecting application unto one's mobile phone have to deal with significant privacy concerns, as they usually not only have access to the devices current location but also to all communication, sensor readings and files stored on the device. One of the ways to resolve this is to give the user fine-grained control over the data to be used in the campaign, and also ensure its secure and anonymized transmission \cite{raf2013sensorium,albert2016mess,zhuang2015login}.
+
+
+%%%%%%%%%%%%%%
+\subsection{Resource-Friendliness and Mobile QoS-Measurements}
+
+In order to encourage a wide-spread proliferation of the campaign --- an absolute must when dealing with location-specific cellular measurement data --- the data-collecting mobile phone application should adhere to stringent resource-restrictions. This would enable an installation on a wider selection of devices as well as allows it to run in the background without interfering with other daily activities of the participants. This especially concerns both the battery life as well as the used radio resources (which in turn generates high energy usage as well) and traffic data caps. To tackle the latter, direct throughput measurements need to be avoided. Instead, various bandwidth estimation methods come to mind that attempt to compute the actual currently possible throughput through specific transmission side effects --- like the inter-arrival time of two consecutively sent \acrshort{TCP} segments in the Packet Pair method \cite{Lai01nettimer:a,Ribeiro:2004:SAB:1005686.1005734,Strauss:2003:MSA:948205.948211}. This works quite well in stable wired networks, but can have issues in radio networks (cf. also \cite{6918916} and Section~\ref{sec:BWest}). Concerning energy consumption, \cite{schwartz13angryapps,6664206} gives some pointers as to the root causes of these in relation to smartphone applications.
+
+% \cite{jokic16mobileBW} removed for now, especially for blinded version
+
+%%%%%%%%%%%%%%
+\subsection{Subjective Studies on Video Streaming Quality and Quality Models}
+
+After the network \gls{QoS} data has been collected it needs to be transformed to the desired target \gls{QoE} metric. The goal in this work was to project YouTube streaming quality. So, for an adequate mapping of measured transmission characteristics to be defined, first the service's properties have to be fully understood and described. Thankfully, many prior publications on YouTube's adaptive streaming mechanisms readily exist, e.g. \cite{7810251,7497231}. Indeed, many interactive YouTube subjective quality user studies have been conducted in the past \cite{7194076,Nam:2014:YPA:2619239.2631433}, and guidelines to conduct further crowdsourced subjective video quality studies also exist \cite{7148150}. And they all paint a good picture of YouTube's streaming experience. However, they are hard to scale up to much more participants, due to the time and resource investments required by the users, amongst other reasons. Of special interest to this work are studies that link the user experience to bandwidth as is for example done in \cite{Casas:2015:EQC:2785971.2785978}. This study finds, that \SI{4}{\mega\bit\per\second} produce a near-optimal experience in their scenario. Yet other studies (e.g. \cite{7247426}) suggest that it is not the value of throughput itself that is decisive, but instead the throughput variations that have a large impact on the user experience. However, other work also suggests that the correlation of throughput could actually be almost neglible \cite{7562672}. Indeed, many other operational factors and also especially anomalies can have a large impact on the \gls{QoE} (as e.g. shown in the case of YouTube in \cite{6975242}).
+
+To achieve independence of this interactive user component, models that appropriately map network \gls{QoS} to an application layer representation of quality are necessary. While there are models for non-adaptive streaming that map the number and length of stalling events to a \gls{MOS} value \cite{Hossfeld2013}, research on good adaptive streaming quality models has not yet progressed very far. However, works exist that discuss \gls{QoE} modeling for video streaming in general \cite{7148138}. A further survey \cite{6913491} describes the intricacies of \gls{HAS} that are necessary to understand in order to appropriately conduct \gls{QoE} modeling. For the purposes of the work in this manuscript we aim for a simple available-throughput-to-achievable-video-quality mapping. On this matter it is also interesting to find \textit{acceptable} levels of \gls{QoE}, or specifically of \gls{MOS}, to a user group in order to link this level to metrics that a user of a participatory crowdsensing platform can easily understand.
+
+For a mobile \gls{QoE}-crowdsensing campaign it is not only beneficial to conduct regular, location-based network \gls{QoS} measurements, but also to couple this with further context data, i.e. device information and sensor readings. The importance of such \textit{context factors} in \gls{QoE} monitoring has been discussed in, e.g., \cite{7140480}. In this specific case context information can be used to accurately handle the ``tunnel scenario'' \cite{7511206,Metzger2016246} to provide even better quality predictions to the community in the future.
+
+
+
+
+
+
+ % \gls{QoE}-optimal adaptive video streaming on the basis of subjective studies \cite{Hossfeld2015}
+
+%Crowdsensing Simulation Using ns-3 \cite{Tanas2014}
+%TaintDroid: An Information-Flow Tracking System for Realtime Privacy Monitoring on Smartphones \cite{Enck:2014:TIT:2642648.2619091}
+%netBravo \url{http://www.netbravo.eu/}
+%Ripe Atlas
+%CrowdSignals - an ethical, crowdfunded mobile data collection campaign.\footnote{\url{http://crowdsignals.io/}}
+%Crowdsourced Raditation monitoring \url{http://blog.safecast.org/}
+%\url{https://radiocells.org/}
+%\url{http://luftdaten.info/}

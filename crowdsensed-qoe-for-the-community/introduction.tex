@@ -1,0 +1,139 @@
+%!TEX root = paper.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{sec:introduction}
+
+
+%%% new start of intro blob
+Be honest: Did you ever try using your flavor-of-the-month messaging or
+social app and just couldn't get it to work? Despite all information
+available to you claiming otherwise. Or did you want to watch a stream
+but only received a video in abysmal quality despite having an excellent
+connection?
+
+An example: One of the author's routinely commutes to work by tram.
+While waiting at the underground tram station he tends to read his
+Twitter stream. In about 50\% of cases the author's device does not
+receive any data despite a full signal strength and data indicator. Only
+after putting a significant distance between himself and the station the
+data transmission resumes.
+
+If this is the case then you are in the same boat as the authors. and
+many other people. And lo and behold! This situation can be improved
+upon, continue reading to find out how.
+%%%
+
+We --- as in we, the research community --- have reached a point where we have a rather good understanding of video streaming \gls{QoE}. Many a user study has been conducted to ascertain the subjective aspects of video quality, both in lab environments as well as through crowdsourcing. From the results of these, application layer \gls{QoS} and \gls{QoE} models have been derived that affix some quality rating to certain objectively measurable \gls{QoS} metrics. This begs the question: What does one actually do with this information? How can it be used to one's benefit? One such benefit will be the contribution of this paper in the form of a mapping service displaying service-specific quality information derived from community-driven network measurements.
+%, although mapping out the intricate interactions of adaptive streaming approaches (\gls{HAS}, or more specifically mostly \gls{DASH} today) still requires work.
+
+In the past video streaming \gls{QoE} research was often incentivised by both video streaming service providers and home Internet access providers. The former obviously desired to understand how their service is received and thus improved their system based upon this information. The latter entities aspire to understand the traffic composition flowing through their network and the resulting direct implications on their customers, not in terms of easy-measurable-but-hard-to-interpret network \gls{QoS} metrics but rather as direct customer satisfaction, e.g. \gls{QoE} measures.
+% Furthermore, access provider also often attempt to employ application-layer middleboxes in an attempt to ``optimize'' traffic. For example, such middleboxes have been used in the past to transcode image data and video streams in order to reduce intra-network traffic (instead of network over-dimensioning to compensate for traffic peaks) while still maintaining some semblance of the original \gls{QoE}.
+% citation on middleboxes?
+
+However, there is another, third, party that has seen not much direct benefit from these endeavors: the actual consumers of video streams. Currently, if a user watches a video she can typically only assess her own subjective video quality herself. The results from user studies and \gls{QoE} models are mostly not readily available to be applied to home users directly. And this situation becomes even more interesting when looking at mobile users, where one often desires to know if one's mobile device works at a specific location. But these current mobile network conditions are very location-dependent and might fluctuate based on a great many factors. This includes spatio-temporal properties, but also radio propagation effects as well as mobility issues and the other usual kinks of a shared medium (as the multiplexed resource allocation in today's mobile radio technologies provides).
+
+Now take a look at the recent developments around mobile crowdsourcing, participatory crowdsensing and community-run testbeds and data-collection programs. You can partake in projects like radio coverage collection\footnote{E.g. \url{https://opensignal.com/}, \url{https://radiocells.org/}, and \cite{raf2013sensorium}.}, current weather information\footnote{E.g. \url{https://web.archive.org/web/20170703191919/http://weathersignal.com/about/}.}, air quality data\footnote{E.g. \url{http://airqualityegg.com/}.}, community-run Internet access\footnote{E.g. the German Freifunk project.}, or even environmental radiation monitoring\footnote{E.g. \url{https://safecast.org/}.} with little to no effort, using either one's own mobile phone or, alternatively, affordable sensor boards. Such projects flourish both through the immediate benefits one can gain through the available data and the participatory motif.
+
+However, most of these community-driven efforts concern basic, directly measurable data. Only very rarely \cite{Nam:2014:YPA:2619239.2631433,7194076} have application-layer \gls{QoS} and \gls{QoE} models and mappings been applied to such data for an immediate benefit of the participants. Exploring the opportunities of this crossover is the goal of this work. Specifically, for this paper we want to tackle the question of YouTube's streaming quality on-the-go on the basis of location-specific bandwidth estimates collected from participating mobile devices.
+
+In order to do so, after highlighting all the related and similar projects as well as the necessary research foundations in Section~\ref{sec:relatedwork}, we describe a mobile crowdsensing prototype --- aimed at low resource usage to have a negligible performance impact in order to be scalable --- that collects the network \gls{QoS} data required for input to an appropriate \gls{QoE} mapping in Section~\ref{sec:prototype}. In the following Section~\ref{sec:qoe} the collected data is fed into a simple, but effective \gls{QoE} mapping and the results evaluated. We further discuss potential approaches how these quality ratings can be appropriately visualized, especially with geospatial and other context data in mind. The work is concluded in Section~\ref{sec:conclusion}.
+
+{}
+% \gls{QoE} research has also not yet been extensively used for is actual \gls{QoE}-based traffic management and steering.
+
+% Let's write about our bandwidth estimation crowdsourcing master thesis.
+
+
+% Semantic layer which drives innovation (with open APIs); \textbf{Community Testbeds}
+
+%\textbf{Geovisualization} of QoE
+
+% Crowdsensing one approach to feed the database of the semantic layer
+% - this allows to do QoE management (context paper)
+% - or networking dimensioning (s. TMA report, TobiasHossfeld-TMA-STSM2011-Report\_final.pdf) and QoE heatmap
+% - Visualization, e.g. to guide/enrich users
+
+% Still there are many open issues...
+% - data aggregation over time
+% - multiple applications
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \subsection{Motivation}
+
+% we want to do QoE-based network management; but how can we derive QoE from a network, not just ,,global average''? Especially tricky in a mobile environment where users can be everywhere, \ldots and even be on the move!
+% {}
+% \subsection{Keywords and Resources}
+
+% \begin{itemize}
+% 	\item Michael Jokic's master thesis
+
+	% \item \textbf{QoE++}
+	% \begin{itemize}
+
+	% 	\item slides: \url{http://www.slideshare.net/tobiashossfeld/hossfeld-qc-man2015keynoteweb}
+
+	% 	\item Dagstuhl 2015: \url{http://materials.dagstuhl.de/abstractPopup.php?xif_session_id=pgfh45lp4d8s2tn5ckevumr7r4&participantIndex=12&documentIndex=0}
+
+	% 	\item Dagstuhl 2016: \url{http://materials.dagstuhl.de/files/16/16472/16472.TobiasHo%C3%9Ffeld.ExtendedAbstract.pdf}
+	% \end{itemize}
+
+
+% 	\item Semantic layer which drives innovation (with open APIs); \textbf{Community Testbeds}
+% 	\begin{itemize}
+% 		\item \textbf{Geovisualization} of QoE
+% 		\item  community-aspects
+% 		\item s. Manifesto-Text bzw. das Kapitel hier: \url{http://materials.dagstuhl.de/files/16/16472/16472.TobiasHo%C3%9Ffeld2.Preprint.docx}
+% 	\end{itemize}
+
+% Crowdsensing one approach to feed the database of the semantic layer
+% - this allows to do QoE management (context paper)
+% - or networking dimensioning (s. TMA report, TobiasHossfeld-TMA-STSM2011-Report\_final.pdf) and QoE heatmap
+% - Visualization, e.g. to guide/enrich users
+
+% Still there are many open issues...
+% - data aggregation over time
+% - multiple applications
+% \end{itemize}
+
+
+% Not part of this work
+% \subsection{QoE-centric Network Management}
+
+% % Network management interpreted as ``ensuring both sufficient bandwidth and fairness''
+
+% % But which ``fairness'' to strife for?
+
+% 
+
+% Fairness won't be the topic of this work
+% \subsubsection{Levels of Fairness}
+
+% Fairness is not easily defined, as it can apply to different communication entities and on vastly different levels. Each fairness has a different effect on the total traffic mix and how transmissions are treated.
+% Also, to ensure any of these fairness different means have to be employed, some very intrusive to the transmissions.
+
+% E.g. while packet fairness is automatic in any regular tail-drop router, and flow fairness is automatically guaranteed through TCP's congestion control (in addition with flow-fairness guaranteeing and head-dropping \gls{AQM} like \texttt{sch\_fq} and\texttt{fq\_codel}), to make application fairness work the bottleneck router needs to identify the specific application that a packet has been sent with.
+
+% \begin{itemize}
+% 	\item Channel fairness, airtime fairness, spectrum fairness, radio resource fairness
+% 	\item Packet (forwarding) fairness
+% 	\item Flow fairness
+% 	\item Host fairness (e.g. by \text{sch\_cake})
+% 	\item Application fairness (?)
+% 	\item QoE fairness
+% \end{itemize}
