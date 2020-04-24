@@ -1,10 +1,9 @@
 %!TEX program = pdflatex
-\documentclass[conference]{IEEEtran}
+\documentclass[conference,10pt,a4paper]{IEEEtran}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[american]{babel}
-
 
 \usepackage[acronym, nomain, nowarn]{glossaries}
 \loadglsentries{acronyms}
@@ -29,13 +28,11 @@
 \DeclareSIUnit{\EUR}{\text{\euro}}
 
 \usepackage[url=false,
-            doi=false,
+            doi=true,
             backend=biber,
             style=ieee,
             isbn=false,
-            sorting=none,
-            minnames=1,
-            maxnames=2]{biblatex}
+            sorting=none]{biblatex}
 \addbibresource{literature.bib}
 
 \usepackage{tabu}
