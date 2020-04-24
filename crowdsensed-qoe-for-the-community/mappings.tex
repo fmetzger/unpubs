@@ -81,37 +81,3 @@ Both the more complex stalling frequency --- using a similar threshold of \SI{2}
 Now consider this map for a hypothetical use case of someone having to move to a new place. It is common today to check the new apartment's location for good internet access, both wired as well as mobile. Using our approach that person would then not just be able to tell if there is connectivity in that area --- as in most other participatory sensing approaches --- but also if a specific service works in an acceptable quality there, especially at the time of day when one is at home.
 
 While YouTube does serve as the example here, it is important to note that, with the available throughput data, similar mappings and visualizations can easily be achieved for any other kind of service. This is just a matter of switching the mapping function to another, appropriate one for that service. This would allow the community crowdsensed map to be easily extensible and able to be personalized to show the quality of one's favorite services. All while still avoiding to collect resource-intense service-specific data and therefore able to easily scaled up to a large community.
-
-
-% \begin{table}
-% \caption{Confusion matrix of ratio of $F$ and $\rho$ values above and below the associated thresholds of $0.02$ for $F$ and $1.25$ for $\rho$.}
-% \label{tab:confused}
-% 	\begin{tabu}{XXX}
-% 		\toprule
-% 		 & \textbf{Better or equal than threshold} & \textbf{Worse than threshold} \\
-% 		 \midrule
-% 		$\mathbf{F}$ & \SI{53.7}{\percent} & \SI{46.3}{\percent} \\
-% 		$\boldsymbol{\rho}$ & \SI{48.2}{\percent} & \SI{51.8}{\percent} \\
-% 		\bottomrule
-% 	\end{tabu}
-% \end{table}
-
-
-
-% This can now be combined with the geographical location, the time of measurement, and radio information attached to the throughput sample. From this the video resolution that is playable without downscaling or stalling at the recorded location is calculated and similar results can now be grouped together to be presented on a geographical map. Grouping spatial samples comes with a set of issues of its own, especially when considering temporal variations that are commonplace in radio networks. For this prototype, we envisioned a simplistic approach like taking the convex hull of the same video quality ratings, other grouping approaches and a better spatial analysis are being considered for the future. Figure~\ref{fig:videoquality-map} depicts a mockup of such a video resolution map.
-
-
-%, and approaches which make available only this data to the public might not be directly helpful or even misleading.
-
-
-%Mention the usual geodesic and spatial issues of affixing values of certain locations (including temporal variations), especially for radio propagation; take the easy way out and suggest convex hull around similar bandwidth values to group them
-
-%Spatial analysis
-%Other spatial grouping and clustering approaches, i.e. detect streets and other ``hot'' areas where a number of data points are grouped closely together
-
-
-%How to read the map in Figure~\ref{fig:videoquality-map}: In each colored region, users in the specified mobile network are expected to be able to watch YouTube videos with their devices in the specified quality without any (or very few) stalling events or downward quality adjustments during \gls{HAS} operation.
-
-%I.e., the actual community benefits from our approach.
-
-
