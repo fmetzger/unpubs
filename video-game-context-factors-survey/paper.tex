@@ -1,0 +1,88 @@
+%!TEX program = pdflatex
+\documentclass[conference,10pt,a4paper]{IEEEtran}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[american]{babel}
+
+\usepackage[acronym, nomain, nowarn]{glossaries}
+\loadglsentries{acronyms}
+\usepackage[hyphens]{url}
+
+\usepackage{mathtools}
+\usepackage{fixmath}
+\usepackage{algorithm2e}
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{eurosym}
+
+\DeclareSIUnit\year{yrs}
+\DeclareSIUnit{\EUR}{\text{\euro}}
+\sisetup{load-configurations = abbreviations,
+         binary-units, 
+         per-mode=fraction}
+\usepackage{csquotes}
+\usepackage{booktabs}
+\usepackage{tabu}
+
+\makeglossaries
+
+\usepackage[url=false,
+            doi=true,
+            backend=biber,
+            style=ieee,
+            isbn=false,
+            sorting=none]{biblatex}
+\addbibresource{literature.bib}
+\usepackage[inline]{enumitem}
+
+\usepackage[np]{numprint}
+\npstyleenglish
+
+
+\usepackage{balance}
+
+\usepackage{xspace}
+\newcommand{\steam}{\textsc{Steam}\xspace}
+\newcommand{\hltb}{\textsc{How Long To Beat}\xspace}
+\newcommand{\metacritic}{\textsc{Metacritic}\xspace}
+\newcommand{\gfnow}{\textsc{GeForce NOW}\xspace}
+\newcommand{\gfnowpc}{\textsc{GeForce NOW} for \gls{PC}\xspace}
+\newcommand{\psnow}{\textsc{PlayStation Now}\xspace}
+\newcommand{\psnowpc}{\textsc{PlayStation Now} on \gls{PC}\xspace}
+\newcommand{\liquid}{\textsc{LiquidSky}\xspace}
+
+
+\begin{document}
+
+\title{Subjective And Objective Assessment Of Video Game Context Factors}
+
+\author{\IEEEauthorblockN{Florian Metzger}
+\IEEEauthorblockA{
+Chair of Communication Networks\\
+University of Würzburg, Germany\\
+florian.metzger@uni-wuerzburg.de}
+\and
+\IEEEauthorblockN{Svenja Schröder, Albert Rafetseder}
+\IEEEauthorblockA{
+Cooperative Systems Research Group\\
+Faculty of Computer Science\\
+University of Vienna, Austria\\
+\{svenja.schroeder|albert.rafetseder\}@univie.ac.at}
+}
+\maketitle
+
+\input{acronyms}
+\input{abstract}
+\input{preface}
+\input{introduction}
+\input{relatedwork}
+\input{background}
+\input{eval}
+\input{conclusion}
+
+\printbibliography
+
+\balance
+
+\end{document}
