@@ -1,0 +1,90 @@
+%!TEX program = pdflatex
+\documentclass[conference,10pt,a4paper]{IEEEtran}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[american]{babel}
+
+\usepackage[acronym, nomain, nowarn]{glossaries}
+\loadglsentries{acronyms}
+\usepackage[hyphens]{url}
+
+\usepackage{mathtools}
+\usepackage{fixmath}
+\usepackage{algorithm2e}
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{eurosym}
+
+\DeclareSIUnit\year{yrs}
+\DeclareSIUnit{\EUR}{\text{\euro}}
+\sisetup{load-configurations = abbreviations,
+         binary-units, 
+         per-mode=fraction}
+\usepackage{csquotes}
+\usepackage{booktabs}
+\usepackage{tabu}
+
+\makeglossaries
+
+\usepackage[url=false,
+            doi=true,
+            backend=biber,
+            style=ieee,
+            isbn=false,
+            sorting=none]{biblatex}
+\addbibresource{literature.bib}
+\usepackage[inline]{enumitem}
+
+\usepackage[np]{numprint}
+\npstyleenglish
+
+
+\usepackage{balance}
+
+\usepackage{xspace}
+\newcommand{\steam}{\textsc{Steam}\xspace}
+\newcommand{\hltb}{\textsc{How Long To Beat}\xspace}
+\newcommand{\metacritic}{\textsc{Metacritic}\xspace}
+\newcommand{\gfnow}{\textsc{GeForce NOW}\xspace}
+\newcommand{\psnow}{\textsc{PlayStation Now}\xspace}
+
+\begin{document}
+
+\title{The Prospects of Cloud Gaming: Do the Benefits Outweigh the Costs?}
+
+\author{\IEEEauthorblockN{Florian Metzger}
+\IEEEauthorblockA{
+Chair of Communication Networks\\
+University of Würzburg, Germany\\
+florian.metzger@uni-wuerzburg.de}
+\and
+\IEEEauthorblockN{Albert Rafetseder, Svenja Schröder}
+\IEEEauthorblockA{
+Cooperative Systems Research Group\\
+Faculty of Computer Science\\
+University of Vienna, Austria\\
+\{albert.rafetseder|svenja.schroeder\}@univie.ac.at}
+\and
+\IEEEauthorblockN{Patrick Zwickl}
+\IEEEauthorblockA{
+Center for Digital Safety \& Security\\
+AIT Austrian Institute of Technology\\
+patrick.zwickl@ait.ac.at}
+}
+
+\maketitle
+
+\input{abstract}
+\input{preface}
+\input{introduction}
+\input{relatedwork}
+\input{background}
+\input{engagement}
+\input{model}
+\input{conclusion}
+
+\printbibliography 
+\balance
+
+\end{document}
