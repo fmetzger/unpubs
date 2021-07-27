@@ -6,13 +6,13 @@
 This section covers the basic characteristics of different gaming platform types, most notably the traditional  \textit{à la carte} model and \textit{fixed fee subscription} cloud gaming approaches. Section~\ref{sec:engagement} will then use these characteristics to reason about player engagement and budget considerations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Platform Characteristics}
+\subsection{Platform Characteristics}\label{subsec:platform-characteristics}
 
 Below, currently active (cloud and other) gaming platforms are examined with regards to pricing models and hardware requirements and costs. The information presented was collected between July 2015 and February 2016. All costs are from an European, specifically German, perspective. If a product is not available in this region, the prices are converted using the most recent currency exchange rates.
 
 \subsubsection{Video Game Consoles}
 
-A classical approach to video gaming is using dedicated consoles with physical copies of game media (e.g., a BD) bought at a retailer. The price for (non-portable) consoles varies but usually lies between \SI{300}[\EUR]{} and \SI{400}[\EUR]{} for the latest console generation, i.e., \textit{Wii U}, \textit{PlayStation 4}, and \textit{Xbox One}. New, major game releases are mostly priced at either \SI{60}[\EUR]{} or \SI{70}[\EUR]{}. Once on the market, the game prices decrease rather slowly. In recent years, retail stores have been complemented with console-specific, proprietary digital distribution services that also offer the latest game at the full price. These official stores are usually exclusive vendors for digital game codes where competitors are excluded.
+A classical approach to video gaming is using dedicated consoles with physical copies of game media (e.g., a Blue-ray Disc) bought at a retailer. The price for (non-portable) consoles varies but usually lies between \SI{300}[\EUR]{} and \SI{400}[\EUR]{} for the latest console generation, i.e., \textit{Wii U}, \textit{PlayStation 4}, and \textit{Xbox One}. New, major game releases are mostly priced at either \SI{60}[\EUR]{} or \SI{70}[\EUR]{}. Once on the market, the game prices decrease rather slowly. In recent years, retail stores have been complemented with console-specific, proprietary digital distribution services that also offer the latest game at the full price. These official stores are usually exclusive vendors for digital game codes where competitors are excluded.
 Subscription fees often apply for the multiplayer mode of games, e.g., \textit{PlayStation Plus} or \textit{Xbox Live Gold} with annual prices of \SI{50}[\EUR]{} and \SI{60}[\EUR]{}, respectively. These services also include access to a small, monthly changing palette of older titles.
 
 
@@ -22,12 +22,12 @@ Subscription fees often apply for the multiplayer mode of games, e.g., \textit{P
 The rise of easy-to-use digital distribution platforms and the independent (``indie'') game scene reinvigorated PC gaming just a few years ago. Today, PC gaming is dominated by large digital marketplaces, with \steam being the largest. The platform has about $10$ million concurrent users at most times of the day. It periodically offers large, often seasonal, sales of recent games at greatly reduced prices (rebates of 75\% for a year-old game are not uncommon). In addition, many resellers offer digital codes for other platforms, often at much lower prices.
 Major releases on PC are usually priced between \SI{50}[\EUR]{} and \SI{60}[\EUR]{}. However, due to the competition between the vendors, the digital retail prices are significantly lower even at launch, and also drop more quickly. Another recent trend are game bundles, which especially prevalent in the indie games scene, commonly offered with a pay-what-you-want model. \textit{Humble Bundle}\footnote{\url{https://www.humblebundle.com/}} is a prominent example. 
 
-Hardware viable for PC gaming starts at about \SI{500}[\EUR]{} but has practically no upper limit for enthusiasts (especially the \gls{GPU} is a cost driver, but essential for modern PC gaming). Thus, the barrier for customers to start PC gaming is higher than for consoles, which is, however, compensated by an increased flexibility and longevity of hardware.
+Hardware viable for PC gaming starts at about \SI{500}[\EUR]{} but has practically no upper limit for enthusiasts (especially the \gls{GPU} is a cost driver, yet essential for modern PC gaming). Thus, the barrier for customers to start PC gaming is higher than for consoles, which is, however, compensated by an increased flexibility and longevity of hardware.
 
 
 \subsubsection{Geforce NOW}
 
-NVIDIA's cloud gaming service%\footnote{\url{https://shield.nvidia.com/games/geforce-now}}
+NVIDIA's cloud gaming service %\footnote{\url{https://shield.nvidia.com/games/geforce-now}}
 is available in North America and select European countries. Like in all cloud gaming services  games are executed and rendered ``in the cloud'' (i.e., in remote data centers), and an audio/video stream is sent back to the player. In Germany the service currently offers $68$ PC titles for a monthly subscription fee of \SI{10}[\EUR]{}. An additional per-game one-time fee between \SI{13}[\EUR]{} and \SI{60}[\EUR]{} is charged for the access to the $19$ most prominent and recent games. The service is delivered from six specialized data center locations (Dublin and Frankfurt in Europe).
 
 The requirements to use this service are rather steep, demanding \SI{50}{\mega\bit\per\second} for a full 1080p60\footnote{\label{foot:rate}Please note: This frame rate of \SI{60}{\hertz} represents the rate of the video encoder and not the game's actual frame rate, which might be considerably lower depending on the complexity of the game.} stream (\SI{10}{\mega\bit\per\second} in order to use the service at all) and a maximum \acrshort{RTT} of \SI{60}{\milli\second} to one of the data centers. In addition, streaming is exclusive to \textit{SHIELD} devices which start at \SI{200}[\EUR]{}.
@@ -79,7 +79,7 @@ The age of a game is computable from its release date. To this end, the \metacri
 %%%%%%%%%%%%
 \subsubsection{Game Lengths}
 
-Game publishers are usually not outspoken about the intended playthrough length of games (nor do all games necessarily have a logical end, and thus no useful definition of a playthrough length). However, players may self-report their experienced playthrough times on sites like \hltb\footnote{\url{http://howlongtobeat.com/}}, on whose data this analysis is based\footnote{\url{https://github.com/mas-ude/gamelengths-scraper}}.
+Game publishers are usually not outspoken about the intended playthrough length of games, nor do all games necessarily have a logical end, and thus a useful definition of a playthrough length. However, players may self-report their experienced playthrough times on sites like \hltb\footnote{\url{http://howlongtobeat.com/}}, on whose data this analysis is based\footnote{\url{https://github.com/mas-ude/gamelengths-scraper}}.
 Figure~\ref{fig:gamelengths-violin} shows the distribution of aggregated game lengths for the three platforms under investigation, and an ``overall'' distribution that includes further platforms and gaming systems. Among the three platforms, the mean and median reported game lengths (approximately \SI{14}{\hour}) are largest for \gfnow. In contrast to the curated choice of games on the Cloud systems, \steam also offers shorter and longer games.
 
 
@@ -95,7 +95,7 @@ Figure~\ref{fig:gamelengths-violin} shows the distribution of aggregated game le
 %%%%%%%%%%%%
 \subsubsection{Game Prices}
 
-Trying to compare the prices per game is a difficult endeavor, due to the mixed approach of both cloud gaming platforms. The \gfnow subscription gives you access to a subset of its catalog that can be extended by purchasing additional games. Similarly, \psnow has a base subscription catalog and additional, rent-able titles. But in addition, every title can also be rented without the need for an active subscription.
+Trying to compare the prices per game is a difficult endeavor, due to the mixed approach of both cloud gaming platforms. The \gfnow subscription gives access to a subset of its catalog that can be extended by purchasing additional games. Similarly, \psnow has a base subscription catalog and additional, rent-able titles. But in addition, every title can also be rented without the need for an active subscription.
 Nevertheless, for \steam it is possible to discuss unit prices: Using the official \acrshort{REST} \acrshort{API}, name and current price of each game were fetched at three different points in time\footnote{\url{https://github.com/mas-ude/steam-data-stats}}. This data was combined with \acrshort{API} data from the 3rd-party site \textit{SteamSpy}\footnote{\url{https://steamspy.com}}, which parses all publicly visible \steam user profiles. Subsequently, \textit{SteamSpy} estimates statistics on the size of the player base and the time each player spends with a title. Furthermore, the site provides a heuristic projection of the total number of owners of each listed title on \steam. Using the combined data, additional perspectives can be given.
 
 \begin{table}
@@ -123,7 +123,7 @@ Table~\ref{tab:steam-price-stats} shows the development of average \steam game p
 
 Figure~\ref{fig:steam-cost-vs-playtime-violin} breaks down the distribution of average playtimes per game price range. The game price ranges are chosen so as to roughly separate the prevalent modes of the price distribution.
 Playtime is defined as the time game owners spend playing a game, as recorded by the \steam platform and scraped from \textit{SteamSpy}. As can be seen, the playtimes generally increase with the price range; unfortunately, the data does not explain the cause: E.g., more expensive games might have more playable content, causing the playtime to increase. Conversely, higher upfront costs may incite players to spend more time regardless of game quality, thus avoiding regret for the expense. On the far left in the Figure, playtimes of ``free'' titles (including free-to-play games with monetization options other than an upfront payment) span almost the whole playtime range with less pronounced prevalences.
-Due to the strong popularity of \steam in PC gaming (even physical retail copies often require using the service nowadays) this set also gives a good general overview of the dimensions of PC gaming in general.
+Due to the strong popularity of \steam in PC gaming (even physical retail copies often require using the online service nowadays) this set also gives a good general overview of the dimensions of PC gaming in general.
 
 
 %%%%%%%%%%%%
