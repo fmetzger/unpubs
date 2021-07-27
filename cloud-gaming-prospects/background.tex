@@ -79,7 +79,7 @@ The age of a game is computable from its release date. To this end, the \metacri
 %%%%%%%%%%%%
 \subsubsection{Game Lengths}
 
-Game publishers are usually not outspoken about the intended playthrough length of games (nor do all games necessarily have a logical end, and thus no useful definition of a playthrough length). However, players may self-report their experienced playthrough times on sites like \hltb\footnote{\url{http://howlongtobeat.com/}}, on whose data this analysis is based\footnote{\url{https://github.com/mas-ude/gamelengths-scraper}}.
+Game publishers are usually not outspoken about the intended playthrough length of games, nor do all games necessarily have a logical end, and thus a useful definition of a playthrough length. However, players may self-report their experienced playthrough times on sites like \hltb\footnote{\url{http://howlongtobeat.com/}}, on whose data this analysis is based\footnote{\url{https://github.com/mas-ude/gamelengths-scraper}}.
 Figure~\ref{fig:gamelengths-violin} shows the distribution of aggregated game lengths for the three platforms under investigation, and an ``overall'' distribution that includes further platforms and gaming systems. Among the three platforms, the mean and median reported game lengths (approximately \SI{14}{\hour}) are largest for \gfnow. In contrast to the curated choice of games on the Cloud systems, \steam also offers shorter and longer games.
 
 
@@ -95,7 +95,7 @@ Figure~\ref{fig:gamelengths-violin} shows the distribution of aggregated game le
 %%%%%%%%%%%%
 \subsubsection{Game Prices}
 
-Trying to compare the prices per game is a difficult endeavor, due to the mixed approach of both cloud gaming platforms. The \gfnow subscription gives you access to a subset of its catalog that can be extended by purchasing additional games. Similarly, \psnow has a base subscription catalog and additional, rent-able titles. But in addition, every title can also be rented without the need for an active subscription.
+Trying to compare the prices per game is a difficult endeavor, due to the mixed approach of both cloud gaming platforms. The \gfnow subscription gives access to a subset of its catalog that can be extended by purchasing additional games. Similarly, \psnow has a base subscription catalog and additional, rent-able titles. But in addition, every title can also be rented without the need for an active subscription.
 Nevertheless, for \steam it is possible to discuss unit prices: Using the official \acrshort{REST} \acrshort{API}, name and current price of each game were fetched at three different points in time\footnote{\url{https://github.com/mas-ude/steam-data-stats}}. This data was combined with \acrshort{API} data from the 3rd-party site \textit{SteamSpy}\footnote{\url{https://steamspy.com}}, which parses all publicly visible \steam user profiles. Subsequently, \textit{SteamSpy} estimates statistics on the size of the player base and the time each player spends with a title. Furthermore, the site provides a heuristic projection of the total number of owners of each listed title on \steam. Using the combined data, additional perspectives can be given.
 
 \begin{table}
